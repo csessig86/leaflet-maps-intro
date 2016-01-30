@@ -48,7 +48,7 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 
 * Pro-tip: If you need a site to convert CSVs into JSON files, check out [Mr. Data Converter](http://shancarter.github.io/mr-data-converter/)
 
-* You need to make sure your JSON array is a variable, so go into the JSON file and add this before the data:
+* The breweries JSON data is one array. Each brewery is an object within that array. You need to make sure the array is a variable, so go into the file and add this before it:
 	```javascript
 	var breweries = 
 

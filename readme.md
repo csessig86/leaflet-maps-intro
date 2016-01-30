@@ -40,9 +40,18 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 		width: 100%;
 		height: 500px;
 	}
-	
+
 	```
 
 ####5. Add data
+* Our sample dataset is [a list of breweries in Iowa](https://docs.google.com/spreadsheets/d/1M6mREJiDMQ1NTbdbOXiw0sWN_6DE7E33JJY503GS7tc/pub?output=html). I've already included lat, long information for each brewery and converted the CSV into a JSON file. You must have lat, long information for each location for Leaflet to put them on the map.
+
+* Pro-tip: If you need a site to convert CSVs into JSON files, check out [Mr. Data Converter](http://shancarter.github.io/mr-data-converter/)
+
+* You need to make sure your JSON data is a variable, so go into the JSON file and add this before the data:
+	```javascript
+	var breweries = 
+
+	```
 
 ####6. Add GeoJSON data

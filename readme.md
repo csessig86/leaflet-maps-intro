@@ -20,8 +20,7 @@ This repo has two directories:
 ####2. Getting started
 Download this repo onto your computer and rename it if you want. Then open up the 01-base directory you created in a text editor. We'll be adding our mapping code to the files in this directory.
 
-Customize
-===========
+####3. Base map
 * You can customize the app as you see fit. Here's a few options you may want to change.
 
 * To change the color of the header and footer of the app (which is currently set to green), go to line 61 in the css/styles.css file and change the background color to something other than '#1A9850'. You can also set the color of the text with the 'color' attribute. Then open up the js/script.js file and go to lines 60 and 65. It should look like so:

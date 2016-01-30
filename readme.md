@@ -6,6 +6,6 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 - Minimal amount of code
 
 - [Plugins](http://leafletjs.com/plugins.html)!
-* Example of the [markercluster plugin](http://csessig86.github.io/tabletop_to_leaflet/#cluster)
+	Example of the [markercluster plugin](http://csessig86.github.io/tabletop_to_leaflet/#cluster)
 
 ####1. Why Leaflet.js?

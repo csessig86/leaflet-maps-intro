@@ -21,17 +21,17 @@ This repo has two directories:
 Download this repo onto your computer and rename it if you want. Then open up the 01-base directory you created in a text editor. We'll be adding our mapping code to the files in this directory.
 
 ####3. Base map
-	```javascript
-	// Call Stamen tiles
-	var layer = new L.StamenTileLayer('toner-background');
+		```javascript
+		// Call Stamen tiles
+		var layer = new L.StamenTileLayer('toner-background');
 
-	// Initialize our map
-	// The first setview parameter is the lat, long
-	// Of the initial zoom
-	// The second parameter is the zoom level
-	var map = new L.Map('map').setView([42,-93],6);
-	map.addLayer(layer);
-	```
+		// Initialize our map
+		// The first setview parameter is the lat, long
+		// Of the initial zoom
+		// The second parameter is the zoom level
+		var map = new L.Map('map').setView([42,-93],6);
+		map.addLayer(layer);
+		```
 
 ####4. CSS
 

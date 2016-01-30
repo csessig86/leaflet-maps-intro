@@ -37,7 +37,10 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 * Add this to css/style.css:
 	```css
 	// Call Stamen tiles
-	var layer = new L.StamenTileLayer('toner-background');
+	#map {
+		width: 100%;
+		height: 500px;
+	}
 
 	// Initialize our map
 	// The first setview parameter is the lat, long

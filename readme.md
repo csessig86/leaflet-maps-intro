@@ -15,9 +15,15 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 This repo has two directories:
 
 - 01-base contains the base files you will need to get started. None of the mapping code has been written in this directory.
-- 02-markers and 02-geojson are the two final projects we are going to build.
+- 02-map is the final project we are going to build.
 
 ####2. Getting started
-Download this repo onto your computer and rename it if you want. Then open up the 01-base directory in a text editor. We'll be adding our mapping code to the files in this directory.
+Download this repo onto your computer and rename it if you want. Then open up the 01-base directory you created in a text editor. We'll be adding our mapping code to the files in this directory.
 
-####3. CSS
+####3. Base map
+
+####4. CSS
+
+####5. Add data
+
+####6. Add GeoJSON data

@@ -1,5 +1,5 @@
 // Call Stamen tiles
-var layer = new L.StamenTileLayer('terrain');
+var layer = new L.StamenTileLayer('toner-background');
 
 // Initialize our map
 // The first setview parameter is the lat, long

@@ -36,7 +36,8 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 ####4. CSS
 * Add this to css/style.css:
 	```css
-	// Base map
+	// Call Stamen tiles
+	var layer = new L.StamenTileLayer('toner-background');
 	```
 
 ####5. Add data

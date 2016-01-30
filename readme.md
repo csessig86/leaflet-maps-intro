@@ -37,7 +37,6 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 * Add this to css/style.css:
 	```css
 	// Base map
-	#map {}
 	```
 
 ####5. Add data

@@ -34,13 +34,13 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 	```
 
 ####4. CSS
-* Add this to css/style.css:
+Add this to css/style.css:
 	```css
 	#map {
 		width: 100%;
 		height: 500px;
 	}
-	
+
 	```
 
 ####5. Add data

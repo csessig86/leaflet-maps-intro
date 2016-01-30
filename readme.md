@@ -36,7 +36,6 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 ####4. CSS
 * Add this to css/style.css:
 	```css
-	// Call Stamen tiles
 	#map {
 		width: 100%;
 		height: 500px;

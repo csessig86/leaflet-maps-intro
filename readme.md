@@ -21,7 +21,7 @@ This repo has two directories:
 Download this repo onto your computer and rename it if you want. Then open up the 01-base directory you created in a text editor. We'll be adding our mapping code to the files in this directory.
 
 ####3. Base map
-To change the color of the header and footer of the app (which is currently set to green), go to line 61 in the css/styles.css file and change the background color to something other than '#1A9850'. You can also set the color of the text with the 'color' attribute. Then open up the js/script.js file and go to lines 60 and 65. It should look like so:
+* Add this to js/script.js:
 	```javascript
 	// Call Stamen tiles
 	var layer = new L.StamenTileLayer('toner-background');
@@ -33,7 +33,6 @@ To change the color of the header and footer of the app (which is currently set 
 	var map = new L.Map('map').setView([42,-93],6);
 	map.addLayer(layer);
 	```
-- This is the part of the script that changes the background color when a user clicks on one of the buttons. You can change it from it's current value of '#136c39'. Then go to lines 62 and 67. This sets the color back to its default. So whatever you set the color to in the css/styles.css file, set it here as well.
 
 ####4. CSS
 

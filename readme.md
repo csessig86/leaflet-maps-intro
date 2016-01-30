@@ -43,16 +43,33 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 
 	```
 
-####5. Add data
+####5. Add data to map
 * Our sample dataset is [a list of breweries in Iowa](https://docs.google.com/spreadsheets/d/1M6mREJiDMQ1NTbdbOXiw0sWN_6DE7E33JJY503GS7tc/pub?output=html). I've already included lat, long information for each brewery and converted the CSV into a JSON file. You must have lat, long information for each location for Leaflet to put them on the map.
 
 * Pro-tip: If you need a site to convert CSVs into JSON files, check out [Mr. Data Converter](http://shancarter.github.io/mr-data-converter/)
 
-* You need to make sure your JSON data is a variable, so go into the JSON file and add this before the data:
+* You need to make sure your JSON array is a variable, so go into the JSON file and add this before the data:
 	```javascript
 	var breweries = 
 
 	```
 
-* 
+* This makes it easy for us to loop through that variable of our JSON array:
+	```javascript
+	// Loop through each brewery in our breweries variable
+	// Each brewery is an object
+	// Inside breweries, which is an array
+	for (var num = 0; num < breweries.length; num++) {
+		// Grab information on the brewery we are currently looping through
+		var brewery = breweries[num];
+		var brewery_lat = brewery["latitude"];
+		var brewery_long = brewery["longitude"];
+
+		// Use Leaflet to add a marker for each brewery
+		// And give it the lat, long information
+		// In the current brewery's object
+		var brewery_marker = L.marker([brewery_lat, brewery_long]).addTo(map);
+	}
+	```
+
 ####6. Add GeoJSON data

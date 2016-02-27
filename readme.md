@@ -21,11 +21,9 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 
 You'll notice at the bottom of the index.html file these lines:
 
-	```html
 	<!-- Our data sources -->
 	<script src="data/ia-breweries.json"></script>
 	<script src="data/ia-counties.json"></script>
-	```
 
 These link to the two data sources we're going to be using: JSON data of breweries in Iowa and GeoJSON data of the counties in Iowa.
 

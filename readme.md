@@ -19,13 +19,14 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 ####2. Getting started
 * Download this repo onto your computer and rename it if you want. Then open up the 01-base directory you created in a text editor. We'll be adding our mapping code to the files in this directory.
 
-You'll notice at the bottom of the index.html file these lines:
-
+* You'll notice at the bottom of the index.html file these lines:
+	```html
 	<!-- Our data sources -->
 	<script src="data/ia-breweries.json"></script>
 	<script src="data/ia-counties.json"></script>
+	```
 
-These link to the two data sources we're going to be using: JSON data of breweries in Iowa and GeoJSON data of the counties in Iowa.
+* These link to the two data sources we're going to be using: JSON data of breweries in Iowa and GeoJSON data of the counties in Iowa.
 
 ####3. Base map
 * Add this to js/script.js:

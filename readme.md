@@ -101,12 +101,12 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 * The counties kind of look ugly right now. We can fix that by extending the geojson object we added:
 	```javascript
 	L.geoJson(iowa_counties, {
-	style: {
-		opacity: 1,
-		weight: 2,
-		color: "#FFF",
-		fillColor: "#ff7800",
-		fillOpacity: 0.8
-	}
+		style: {
+			opacity: 1,
+			weight: 2,
+			color: "#FFF",
+			fillColor: "#ff7800",
+			fillOpacity: 0.8
+		}
 	}).addTo(map);
 	```

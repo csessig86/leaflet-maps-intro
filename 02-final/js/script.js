@@ -5,8 +5,21 @@ var layer = new L.StamenTileLayer('toner-background');
 // The first setview parameter is the lat, long
 // Of the initial zoom
 // The second parameter is the zoom level
-var map = new L.Map('map').setView([42,-93],6);
+var map = new L.Map('map').setView([42,-93],7);
 map.addLayer(layer);
+
+// Call the GeoJSON file ia-counties
+// Which is in a variable called iowa_counties
+// And add to the map
+L.geoJson(iowa_counties, {
+	style: {
+		opacity: 1,
+		weight: 2,
+		color: "#FFF",
+		fillColor: "#ff7800",
+		fillOpacity: 0.8
+	}
+}).addTo(map);
 
 // Loop through each brewery in our breweries variable
 // Each brewery is an object

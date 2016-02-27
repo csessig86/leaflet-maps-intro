@@ -26,7 +26,7 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 	<script src="data/ia-counties.json"></script>
 	```
 
-* These link to the two data sources we're going to be using: JSON data of breweries in Iowa and GeoJSON data of the counties in Iowa.
+* These link to the two data sources we're going to be using: [JSON data](http://www.copterlabs.com/json-what-it-is-how-it-works-how-to-use-it/) of breweries in Iowa and [GeoJSON data](http://geojson.org/) of the counties in Iowa.
 
 ####3. Base map
 * Add this to js/script.js:
@@ -38,7 +38,7 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 	// The first setview parameter is the lat, long
 	// Of the initial zoom
 	// The second parameter is the zoom level
-	var map = new L.Map('map').setView([42,-93],6);
+	var map = new L.Map('map').setView([42,-93],7);
 	map.addLayer(layer);
 	```
 
@@ -60,7 +60,6 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 * The breweries JSON data is one array. Each brewery is an object within that array. You need to make sure the array is a variable, so go into the file and add this before it:
 	```javascript
 	var breweries = 
-
 	```
 
 * This makes it easy for us to loop through that variable of our JSON array:
@@ -82,3 +81,32 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 	```
 
 ####6. Add GeoJSON data
+* The second dataset we will be working is a list of counties in Iowa, which is available in GeoJSON format [here](http://catalog.opendata.city/dataset/iowa-counties-polygon/resource/52b6d8b4-b203-4ab3-94db-e5e93c335a14). I've downloaded this already and included it within the data directory.
+
+* Like with our breweries, I've made the JSON object a variable so it can be easiliy called within script.js:
+	```javascript
+	var ia_counties = 
+	```
+
+* Adding our counties to the map only takes one line of code:
+	```javascript
+	L.geoJson(iowa_counties).addTo(map);
+	```
+
+* Note: You'll what to place this ABOVE the for loop that places marker on the map, so the counties appear under the markers.
+
+* Refresh your map and you'll see the counties now on the map.
+
+####7. Styling the counties
+* The counties kind of look ugly right now. We can fix that by extending the geojson object we added:
+	```javascript
+	L.geoJson(iowa_counties, {
+	style: {
+		opacity: 1,
+		weight: 2,
+		color: "#FFF",
+		fillColor: "#ff7800",
+		fillOpacity: 0.8
+	}
+	}).addTo(map);
+	```

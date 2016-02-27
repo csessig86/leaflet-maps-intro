@@ -99,6 +99,7 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 
 ####7. Styling the counties
 * The counties kind of look ugly right now. We can fix that by extending the geojson object we added:
+
 	```javascript
 	L.geoJson(iowa_counties, {
 		style: {

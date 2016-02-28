@@ -22,22 +22,17 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 * You'll notice at the bottom of the index.html file these lines:
 	```html
 	<!-- Our data sources -->
-	<script src="data/ia-breweries.json"></script>
-	<script src="data/ia-counties.json"></script>
+	<script src="json/ia-breweries.json"></script>
+	<script src="json/ia-counties.json"></script>
 	```
 
-* These link to the two data sources we're going to be using: [JSON data](http://www.copterlabs.com/json-what-it-is-how-it-works-how-to-use-it/) of breweries in Iowa and [GeoJSON data](http://geojson.org/) of the counties in Iowa.
+* These link to the data sources we're going to be using: [JSON data](http://www.copterlabs.com/json-what-it-is-how-it-works-how-to-use-it/) of breweries in Iowa and [GeoJSON data](http://geojson.org/) of the counties in Iowa.
 
 ####3. Base map
 * Add this to js/script.js:
 	```javascript
-	// Call Stamen tiles
 	var layer = new L.StamenTileLayer('toner-background');
 
-	// Initialize our map
-	// The first setview parameter is the lat, long
-	// Of the initial zoom
-	// The second parameter is the zoom level
 	var map = new L.Map('map').setView([42,-93],7);
 	map.addLayer(layer);
 	```
@@ -64,18 +59,11 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 
 * This makes it easy for us to loop through that variable of our JSON array:
 	```javascript
-	// Loop through each brewery in our breweries variable
-	// Each brewery is an object
-	// Inside breweries, which is an array
 	for (var num = 0; num < breweries.length; num++) {
-		// Grab information on the brewery we are currently looping through
 		var brewery = breweries[num];
 		var brewery_lat = brewery["latitude"];
 		var brewery_long = brewery["longitude"];
 
-		// Use Leaflet to add a marker for each brewery
-		// And give it the lat, long information
-		// In the current brewery's object
 		var brewery_marker = L.marker([brewery_lat, brewery_long]).addTo(map);
 	}
 	```
@@ -111,3 +99,34 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 		}
 	}).addTo(map);
 	```
+
+For more information on the different styling options available for GeoJSON layers, visit [this page](http://mourner.github.io/Leaflet/reference.html#path-options).
+
+####7. Color counties based on population data
+* Our map is cool and all but the counties don't tell us much. Wouldn't it be neat if we could shade the counties based on how many people lived within them? Fortunately we can do that relatively easily in Leaflet.
+
+* The final piece of data we will be working with is population data from the [U.S. Census](http://www.census.gov/. We will create a basic [choropleth map](http://leafletjs.com/examples/choropleth.html) where the counties will be shaded based on their population. The more people, the darker the county.
+
+* I've already downloaded the data from the [Census Reporter site](http://censusreporter.org/data/table/?table=B01003&geo_ids=04000US19,050|04000US19,050|04000US19&primary_geo_id=04000US19) and merged it with the county GeoJSON file that's on the map. I used [QGIS](http://www.qgis.org/en/site/) to do this. If you're not familiar with QGIS, I recommend checking it out. It's a like watered-down version of [ArcGIS](https://www.arcgis.com/features/). But unlike ArcGIS, it's free.
+
+
+* e first need to use Leaflet's handy onEachFeature function for geojson objects:
+	```javascript
+	L.geoJson(iowa_counties, {
+		style: {
+			opacity: 1,
+			weight: 2,
+			color: "#FFF",
+			fillColor: "#ff7800",
+			fillOpacity: 0.8
+		},
+		onEachFeature: function (feature, layer) {
+			// Grab the geo id
+			var geo_id = feature['properties']['geoid'];
+			
+		}
+	}).addTo(map);
+	```
+
+* 
+

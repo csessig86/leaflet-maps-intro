@@ -18,6 +18,14 @@ L.geoJson(iowa_counties, {
 		color: "#FFF",
 		fillColor: "#ff7800",
 		fillOpacity: 0.8
+	},
+	// Ran each time a shape is added to the map
+	// This will be ran 99 times because we have 99 counties
+	// To put on the map
+	onEachFeature: function (feature, layer) {
+		// Grab the geoID
+		var geo_id = feature['properties']['geoid'];
+
 	}
 }).addTo(map);
 

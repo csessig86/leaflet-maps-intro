@@ -107,10 +107,9 @@ For more information on the different styling options available for GeoJSON laye
 
 * The final piece of data we will be working with is population data from the [U.S. Census](http://www.census.gov/. We will create a basic [choropleth map](http://leafletjs.com/examples/choropleth.html) where the counties will be shaded based on their population. The more people, the darker the county.
 
-* I've already downloaded the data from the [Census Reporter site](http://censusreporter.org/data/table/?table=B01003&geo_ids=04000US19,050|04000US19,050|04000US19&primary_geo_id=04000US19) and merged it with the county GeoJSON file that's on the map. I used [QGIS](http://www.qgis.org/en/site/) to do this. If you're not familiar with QGIS, I recommend checking it out. It's a like watered-down version of [ArcGIS](https://www.arcgis.com/features/). But unlike ArcGIS, it's free.
+* I've already downloaded the data from the [Census Reporter site](http://censusreporter.org/data/table/?table=B01003&geo_ids=04000US19,050|04000US19,050|04000US19&primary_geo_id=04000US19) and merged it into the county GeoJSON file that's on the map. I used [QGIS](http://www.qgis.org/en/site/) to do this. If you're not familiar with QGIS, I recommend checking it out. It's a like watered-down version of [ArcGIS](https://www.arcgis.com/features/). But unlike ArcGIS, it's free.
 
-
-* e first need to use Leaflet's handy onEachFeature function for geojson objects:
+* There's a really handy function Leaflet provides called onEachFeature function that will help us create our choropleth map:
 	```javascript
 	L.geoJson(iowa_counties, {
 		style: {
@@ -121,12 +120,14 @@ For more information on the different styling options available for GeoJSON laye
 			fillOpacity: 0.8
 		},
 		onEachFeature: function (feature, layer) {
-			// Grab the geo id
-			var geo_id = feature['properties']['geoid'];
-			
+			var population = feature['properties']['population'];
+			var population_num = parseInt(population);
 		}
 	}).addTo(map);
 	```
 
-* 
+* This function is ran every time a shape is put on the map. Since Iowa has 99 counties, this function will run 99 times when creating this map.
 
+* Each county it loops through is an object, with a couple of data points, including the shape of the county and the population (which I added with QGIS). We're after the county's population, and the population variable within the onEachFeature function grabs it. It's stored as a string in the object, so we need to convert it to an integer using the handy [parseInt function](http://www.w3schools.com/jsref/jsref_parseint.asp). We store it as population_num.
+
+*

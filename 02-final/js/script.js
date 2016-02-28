@@ -23,9 +23,13 @@ L.geoJson(iowa_counties, {
 	// This will be ran 99 times because we have 99 counties
 	// To put on the map
 	onEachFeature: function (feature, layer) {
-		// Grab the geoID
-		var geo_id = feature['properties']['geoid'];
+		// Grab the population for each county
+		var population = feature['properties']['population'];
+		// It's stored as a string in the object,
+		// So we need to convert it to an integer
+		var population_num = parseInt(population);
 
+		console.log(population_num);
 	}
 }).addTo(map);
 

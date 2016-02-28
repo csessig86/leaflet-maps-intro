@@ -8,29 +8,41 @@ var layer = new L.StamenTileLayer('toner-background');
 var map = new L.Map('map').setView([42,-93],7);
 map.addLayer(layer);
 
+function setColor(population) {
+	var population_num = parseInt(population)
+
+	if (population_num > 150000) {
+		return '#005824';
+	} else if (population_num > 125000) {
+		return '#238b45';
+	} else if (population_num > 100000) {
+		return '#41ae76';
+	} else if (population_num > 75000) {
+		return '#66c2a4';
+	} else if (population_num > 50000) {
+		return '#99d8c9';
+	} else if (population_num > 25000) {
+		return '#ccece6';
+	} else {
+		return '#edf8fb';
+	}
+}
+
+function setStyle(feature) {
+	return {
+		opacity: 1,
+		weight: 2,
+		color: "#FFF",
+		fillColor: setColor(feature.properties.population),
+		fillOpacity: 0.8
+	}
+}
+
 // Call the GeoJSON file ia-counties
 // Which is in a variable called iowa_counties
 // And add to the map
 L.geoJson(iowa_counties, {
-	style: {
-		opacity: 1,
-		weight: 2,
-		color: "#FFF",
-		fillColor: "#ff7800",
-		fillOpacity: 0.8
-	},
-	// Ran each time a shape is added to the map
-	// This will be ran 99 times because we have 99 counties
-	// To put on the map
-	onEachFeature: function (feature, layer) {
-		// Grab the population for each county
-		var population = feature['properties']['population'];
-		// It's stored as a string in the object,
-		// So we need to convert it to an integer
-		var population_num = parseInt(population);
-
-		console.log(population_num);
-	}
+	style: setStyle
 }).addTo(map);
 
 // Loop through each brewery in our breweries variable

@@ -89,18 +89,24 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 * The counties kind of look ugly right now. We can fix that by extending the geojson object we added:
 
 	```javascript
-	L.geoJson(iowa_counties, {
-		style: {
+	function setStyle(feature) {
+		return {
 			opacity: 1,
 			weight: 2,
 			color: "#FFF",
-			fillColor: "#ff7800",
+			fillColor: "#005824",
 			fillOpacity: 0.8
 		}
+	}
+	
+	L.geoJson(iowa_counties, {
+		style: setStyle
 	}).addTo(map);
 	```
 
-For more information on the different styling options available for GeoJSON layers, visit [this page](http://mourner.github.io/Leaflet/reference.html#path-options).
+* Every time a county is created, the geojson object calls the style method, which, in turn, calls the setSyle function. The function then returns styles for the county.
+
+* For more information on the different styling options available for GeoJSON layers, visit [this page](http://mourner.github.io/Leaflet/reference.html#path-options).
 
 ####7. Color counties based on population data
 * Our map is cool and all but the counties don't tell us much. Wouldn't it be neat if we could shade the counties based on how many people lived within them? Fortunately we can do that relatively easily in Leaflet.
@@ -109,20 +115,40 @@ For more information on the different styling options available for GeoJSON laye
 
 * I've already downloaded the data from the [Census Reporter site](http://censusreporter.org/data/table/?table=B01003&geo_ids=04000US19,050|04000US19,050|04000US19&primary_geo_id=04000US19) and merged it into the county GeoJSON file that's on the map. I used [QGIS](http://www.qgis.org/en/site/) to do this. If you're not familiar with QGIS, I recommend checking it out. It's a like watered-down version of [ArcGIS](https://www.arcgis.com/features/). But unlike ArcGIS, it's free.
 
-* There's a really handy function Leaflet provides called onEachFeature function that will help us create our choropleth map:
+* There's a really handy function Leaflet provides called onEachFeature that will help us create our choropleth map:
 	```javascript
-	L.geoJson(iowa_counties, {
-		style: {
+	function setColor(population) {
+		var population_num = parseInt(population)
+
+		if (population_num > 150000) {
+			return '#005824';
+		} else if (population_num > 125000) {
+			return '#238b45';
+		} else if (population_num > 100000) {
+			return '#41ae76';
+		} else if (population_num > 75000) {
+			return '#66c2a4';
+		} else if (population_num > 50000) {
+			return '#99d8c9';
+		} else if (population_num > 25000) {
+			return '#ccece6';
+		} else {
+			return '#edf8fb';
+		}
+	}
+
+	function setStyle(feature) {
+		return {
 			opacity: 1,
 			weight: 2,
 			color: "#FFF",
-			fillColor: "#ff7800",
+			fillColor: setColor(feature.properties.population),
 			fillOpacity: 0.8
-		},
-		onEachFeature: function (feature, layer) {
-			var population = feature['properties']['population'];
-			var population_num = parseInt(population);
 		}
+	}
+	
+	L.geoJson(iowa_counties, {
+		style: setStyle
 	}).addTo(map);
 	```
 
@@ -130,4 +156,4 @@ For more information on the different styling options available for GeoJSON laye
 
 * Each county it loops through is an object, with a couple of data points, including the shape of the county and the population (which I added with QGIS). We're after the county's population, and the population variable within the onEachFeature function grabs it. It's stored as a string in the object, so we need to convert it to an integer using the handy [parseInt function](http://www.w3schools.com/jsref/jsref_parseint.asp). We store it as population_num.
 
-*
+* Now that we have the county's population

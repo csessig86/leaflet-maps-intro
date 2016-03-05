@@ -13,11 +13,11 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 
 ####2. The set up
 * This repo has two directories:
-	* 01-base contains the base files you will need to get started. None of the mapping code has been written in this directory.
+	* 01-base contains the base files you will need to get started. All the files you need have been created here, but none of the mapping code has been written yet.
 	* 02-final is the final project we are going to build.
 
 ####2. Getting started
-* Download this repo onto your computer and rename it if you want. Then open up the 01-base directory you created in a text editor. We'll be adding our mapping code to the files in this directory.
+* Download this repo onto your computer. Then open up the 01-base directory you created in a text editor. We'll be adding our mapping code to the files in this directory.
 
 * You'll notice at the bottom of the index.html file these lines:
 	```html
@@ -46,13 +46,16 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 	}
 
 	```
+* This gets us a map without any data points.
 
 ####5. Add data to map
 * Our sample dataset is [a list of breweries in Iowa](https://docs.google.com/spreadsheets/d/1M6mREJiDMQ1NTbdbOXiw0sWN_6DE7E33JJY503GS7tc/pub?output=html). I've already included lat, long information for each brewery and converted the CSV into a JSON file. You must have lat, long information for each location for Leaflet to put them on the map.
 
 * Pro-tip: If you need a site to convert CSVs into JSON files, check out [Mr. Data Converter](http://shancarter.github.io/mr-data-converter/)
 
-* The breweries JSON data is one array. Each brewery is an object within that array. You need to make sure the array is a variable, so go into the file and add this before it:
+* The breweries JSON data is one array. Each brewery is an object within that array. Objects have keys and values and each represent a data point. For instance, in the breweries data, one of the keys is address. The value is address for the specific brewery.
+
+You need to make sure the array is a variable, so go into the file and add this before it:
 	```javascript
 	var breweries = 
 	```
@@ -67,15 +70,16 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 		var brewery_marker = L.marker([brewery_lat, brewery_long]).addTo(map);
 	}
 	```
+* This loops through each brewery, grabs the brewery's latitude and longitude information and puts it on the map. The [L.marker function](http://leafletjs.com/reference.html#marker) is a Leaflet function that is used to create a new marker for each brewery we are looping through. It's placed on the map based on the brewery's latitude and longitude information.
 
 ####6. Add GeoJSON data
 * The second dataset we will be working is a list of counties in Iowa, which is available in GeoJSON format [here](http://catalog.opendata.city/dataset/iowa-counties-polygon/resource/52b6d8b4-b203-4ab3-94db-e5e93c335a14). I've downloaded this already and included it within the data directory.
 
 * NOTE: The counties also have population data in them, which we use later.
 
-* Like with our breweries, I've made the JSON object a variable so it can be easiliy called within script.js:
+* Like with our breweries, we need to make the GeoJSON object a variable so it can be easiliy called within script.js:
 	```javascript
-	var ia_counties = 
+	var iowa_counties = 
 	```
 
 * Adding our counties to the map only takes one line of code:
@@ -83,7 +87,7 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 	L.geoJson(iowa_counties).addTo(map);
 	```
 
-* Note: You'll what to place this ABOVE the for loop that places marker on the map, so the counties appear under the markers.
+* You'll what to place this ABOVE the for loop that places the marker on the map. The makes sure the counties appear under the markers.
 
 * Refresh your map and you'll see the counties now on the map.
 
@@ -106,14 +110,14 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 	}).addTo(map);
 	```
 
-* Every time a county is looped through, the geojson object calls the style method, which, in turn, calls the setSyle function. The function then returns styles for the particular county. Right now, we are returning the same fillColor for each county, so all the counties will be colored the same.
+* Every time a county is looped through, the [Leaflet GeJSON function](http://leafletjs.com/reference.html#geojson) calls the [style method](http://leafletjs.com/reference.html#geojson-style), which, in turn, calls the setSyle function. The function then returns styles for the particular county. Right now, we are returning the same fillColor for each county, so all the counties will be colored the same.
 
 * For more information on the different styling options available for GeoJSON layers, visit [this page](http://mourner.github.io/Leaflet/reference.html#path-options).
 
 ####7. Color counties based on population data
 * Our map is cool and all but the counties don't tell us much. Wouldn't it be neat if we could shade the counties based on how many people lived within them? Fortunately we can do that relatively easily in Leaflet.
 
-* The final piece of data we will be working with is population data from the [U.S. Census](http://www.census.gov/. We will create a basic [choropleth map](http://leafletjs.com/examples/choropleth.html) where the counties will be shaded based on their population. The more people, the darker the county.
+* The final piece of data we will be working with is population data from the [U.S. Census](http://www.census.gov/). We will create a basic [choropleth map](http://leafletjs.com/examples/choropleth.html) where the counties will be shaded based on their population. The more people, the darker the county.
 
 * I've already downloaded the data from the [Census Reporter site](http://censusreporter.org/data/table/?table=B01003&geo_ids=04000US19,050|04000US19,050|04000US19&primary_geo_id=04000US19) and merged it into the county GeoJSON file that's on the map. I used [QGIS](http://www.qgis.org/en/site/) to do this. If you're not familiar with QGIS, I recommend checking it out. It's a like watered-down version of [ArcGIS](https://www.arcgis.com/features/). But unlike ArcGIS, it's free.
 
@@ -160,4 +164,4 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 
 * The setColor function looks at the population and it assigns it a color. The higher the population, the darker the green. The colors were grabbed from [ColorBrewer](http://colorbrewer2.org/).
 
-#####That's it!
+* Now refresh the map one more time. You have created a beautiful choropleth map with markers on top of it. Congrats!

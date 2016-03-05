@@ -8,6 +8,9 @@ var layer = new L.StamenTileLayer('toner-background');
 var map = new L.Map('map').setView([42,-93],7);
 map.addLayer(layer);
 
+// Set the color of the individual county
+// All colors are shades of green
+// The more population, the darker the county will appear on the map
 function setColor(population) {
 	var population_num = parseInt(population)
 
@@ -28,6 +31,9 @@ function setColor(population) {
 	}
 }
 
+// Styles for each county on the map
+// With this, we grab each county's population
+// And send it to the setColor function above
 function setStyle(feature) {
 	return {
 		opacity: 1,

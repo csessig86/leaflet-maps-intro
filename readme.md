@@ -1,5 +1,5 @@
 #Building maps with Leaflet.js
-This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](https://github.com/Leaflet/Leaflet). This session is best for people with a beginner's understanding of Javascript.
+This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](https://github.com/Leaflet/Leaflet).
 
 ####1. Why Leaflet.js?
 * Free, open source and actively maintained
@@ -71,6 +71,8 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 ####6. Add GeoJSON data
 * The second dataset we will be working is a list of counties in Iowa, which is available in GeoJSON format [here](http://catalog.opendata.city/dataset/iowa-counties-polygon/resource/52b6d8b4-b203-4ab3-94db-e5e93c335a14). I've downloaded this already and included it within the data directory.
 
+* NOTE: The counties also have population data in them, which we use later.
+
 * Like with our breweries, I've made the JSON object a variable so it can be easiliy called within script.js:
 	```javascript
 	var ia_counties = 
@@ -104,7 +106,7 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 	}).addTo(map);
 	```
 
-* Every time a county is created, the geojson object calls the style method, which, in turn, calls the setSyle function. The function then returns styles for the county.
+* Every time a county is looped through, the geojson object calls the style method, which, in turn, calls the setSyle function. The function then returns styles for the particular county. Right now, we are returning the same fillColor for each county, so all the counties will be colored the same.
 
 * For more information on the different styling options available for GeoJSON layers, visit [this page](http://mourner.github.io/Leaflet/reference.html#path-options).
 
@@ -115,7 +117,7 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 
 * I've already downloaded the data from the [Census Reporter site](http://censusreporter.org/data/table/?table=B01003&geo_ids=04000US19,050|04000US19,050|04000US19&primary_geo_id=04000US19) and merged it into the county GeoJSON file that's on the map. I used [QGIS](http://www.qgis.org/en/site/) to do this. If you're not familiar with QGIS, I recommend checking it out. It's a like watered-down version of [ArcGIS](https://www.arcgis.com/features/). But unlike ArcGIS, it's free.
 
-* There's a really handy function Leaflet provides called onEachFeature that will help us create our choropleth map:
+* Instead setting the same color for each county, we're going to grab the population for each county we're looping through and set the color based on its value:
 	```javascript
 	function setColor(population) {
 		var population_num = parseInt(population)
@@ -146,14 +148,16 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 			fillOpacity: 0.8
 		}
 	}
-	
+
 	L.geoJson(iowa_counties, {
 		style: setStyle
 	}).addTo(map);
 	```
 
-* This function is ran every time a shape is put on the map. Since Iowa has 99 counties, this function will run 99 times when creating this map.
+* Each county setStyle loops through is an object, with a couple of data points, including the shape of the county and the population (which I added with QGIS). We're after the county's population, and we can grab it by calling feature.properties.population.
 
-* Each county it loops through is an object, with a couple of data points, including the shape of the county and the population (which I added with QGIS). We're after the county's population, and the population variable within the onEachFeature function grabs it. It's stored as a string in the object, so we need to convert it to an integer using the handy [parseInt function](http://www.w3schools.com/jsref/jsref_parseint.asp). We store it as population_num.
+* This value is sent to the setColor function, which sets the color of the county based on its value. The population is stored as a string in the object, so we need to convert it to an integer using the handy [parseInt function](http://www.w3schools.com/jsref/jsref_parseint.asp).
 
-* Now that we have the county's population
+* The setColor function looks at the population and it assigns it a color. The higher the population, the darker the green. The colors were grabbed from [ColorBrewer](http://colorbrewer2.org/).
+
+#####That's it!

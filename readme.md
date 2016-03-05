@@ -164,4 +164,5 @@ You need to make sure the array is a variable, so go into the file and add this 
 
 * The setColor function looks at the population and it assigns it a color. The higher the population, the darker the green. The colors were grabbed from [ColorBrewer](http://colorbrewer2.org/).
 
-#####Now refresh the map one more time. You have created a beautiful choropleth map with markers on top of it. Congrats!
+
+* #####Now refresh the map one more time. You have created a beautiful choropleth map with markers on top of it. Congrats!

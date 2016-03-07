@@ -12,5 +12,5 @@ I suggest participants have a beginner's knowledge of Javascript. It would be he
 Chris Essig is a web developer at The Gazette in Cedar Rapids, Iowa.
 
 Contact:
-@CEssig
-csessig86@gmail.com
+* [@CEssig](https://twitter.com/cessig)
+* csessig86@gmail.com

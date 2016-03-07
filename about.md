@@ -1,16 +1,15 @@
 #Building maps with Leaflet.js
 * NICAR 2016
 * Friday, March 11 at 11:30 a.m.
-* [Event URL](http://www.ire.org/events-and-training/event/2198/2256/)
+* [More information](http://www.ire.org/events-and-training/event/2198/2256/)
 
 ###Course description
 
-Maps! Who doesn't love wonderful, colorful maps? In this course we will be building a map with Leaflet.js., a very popular Javascript mapping library. The map will display both markers and shapes. The shapes will be used to create a basic choropleth map.
+*  Maps! Who doesn't love wonderful, colorful maps? In this course we will be building a map with Leaflet.js., a very popular Javascript mapping library. The map will display both markers and shapes. The shapes will be used to create a basic choropleth map.
 
-I suggest participants have a beginner's knowledge of Javascript. It would be helpful if you are familiar with basic Javascript concepts like objects, arrays and for loops. We will also be working with JSON and GeoJSON data. Some knowledge of these would be also helpful.
+* I suggest participants have a beginner's knowledge of Javascript. It would be helpful if you are familiar with basic Javascript concepts like objects, arrays and for loops. We will also be working with JSON and GeoJSON data. Some knowledge of these would be also helpful.
 
 ###About the author
-Chris Essig is a web developer at The Gazette in Cedar Rapids, Iowa.
-
+* Chris Essig is a web developer at The Gazette in Cedar Rapids, Iowa.
 * [@CEssig](https://twitter.com/cessig)
 * csessig86@gmail.com

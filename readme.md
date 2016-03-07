@@ -55,10 +55,10 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 
 * The breweries JSON data is one array. Each brewery is an object within that array. Objects have keys and values and each represent a data point. For instance, in the breweries data, one of the keys is address. The value is address for the specific brewery.
 
-You need to make sure the array is a variable, so go into the file and add this before it:
-```javascript
-var breweries = 
-```
+* You need to make sure the array is a variable, so go into the file and add this before it:
+	```javascript
+	var breweries = 
+	```
 
 * This makes it easy for us to loop through that variable of our JSON array:
 	```javascript

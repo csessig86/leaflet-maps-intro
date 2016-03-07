@@ -1,4 +1,4 @@
-##Building maps with Leaflet.js
+#Building maps with Leaflet.js
 NICAR 2016
 Friday, March 11 at 11:30 a.m.
 

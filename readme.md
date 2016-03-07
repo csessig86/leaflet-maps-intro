@@ -51,7 +51,7 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 ####5. Add data to map
 * Our sample dataset is [a list of breweries in Iowa](https://docs.google.com/spreadsheets/d/1M6mREJiDMQ1NTbdbOXiw0sWN_6DE7E33JJY503GS7tc/pub?output=html). I've already included lat, long information for each brewery and converted the CSV into a JSON file. You must have lat, long information for each location for Leaflet to put them on the map.
 
-* Pro-tip: If you need a site to convert CSVs into JSON files, check out [Mr. Data Converter](http://shancarter.github.io/mr-data-converter/)
+* Pro-tip: If you need a site to convert CSVs into JSON files, check out [Mr. Data Converter](http://shancarter.github.io/mr-data-converter/). And if you're looking for a site that can geocode addresses in a Google spreadsheet, check out [this site](http://gmaps-samples.googlecode.com/svn/trunk/spreadsheetsgeocoder/geocodespreadsheet.htm).
 
 * The breweries JSON data is one array. Each brewery is an object within that array. Objects have keys and values and each represent a data point. For instance, in the breweries data, one of the keys is address. The value is address for the specific brewery.
 

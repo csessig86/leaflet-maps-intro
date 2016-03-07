@@ -1,4 +1,4 @@
-#Building maps with Leaflet.js
+#Building your first Leaflet.js map
 This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](https://github.com/Leaflet/Leaflet).
 
 ####1. Why Leaflet.js?

@@ -1,4 +1,4 @@
-####About the author
+###About the author
 Chris Essig is a web developer at The Gazette in Cedar Rapids, Iowa.
 
 Contact:
@@ -6,7 +6,7 @@ Contact:
 csessig86@gmail.com
 
 
-####Course description
+###Course description
 
 Maps! Who doesn't love wonderful, colorful maps? In this course we will be building a map with Leaflet.js., a very popular Javascript mapping library. The map will display both markers and shapes. The shapes will be used to create a basic choropleth map.
 

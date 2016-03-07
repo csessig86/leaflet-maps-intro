@@ -1,6 +1,7 @@
 #Building maps with Leaflet.js
-NICAR 2016
-Friday, March 11 at 11:30 a.m.
+* NICAR 2016
+* Friday, March 11 at 11:30 a.m.
+* [Event URL](http://www.ire.org/events-and-training/event/2198/2256/)
 
 ###Course description
 
@@ -11,6 +12,5 @@ I suggest participants have a beginner's knowledge of Javascript. It would be he
 ###About the author
 Chris Essig is a web developer at The Gazette in Cedar Rapids, Iowa.
 
-Contact:
 * [@CEssig](https://twitter.com/cessig)
 * csessig86@gmail.com

@@ -59,9 +59,20 @@ for (var num = 0; num < breweries.length; num++) {
 	var brewery = breweries[num];
 	var brewery_lat = brewery["latitude"];
 	var brewery_long = brewery["longitude"];
+	var brewery_name = brewery["brewery"];
+	var brewery_address = brewery["address"];
+	var brewery_city = brewery["city"];
 
 	// Use Leaflet to add a marker for each brewery
 	// And give it the lat, long information
 	// In the current brewery's object
-	L.marker([brewery_lat, brewery_long]).addTo(map);
+	var marker = L.marker([brewery_lat, brewery_long]).addTo(map);
+	
+	// HTML that will appear in popup
+	var popup_html = '<h3>' + brewery_name + '</h3>';
+	popup_html += '<div>' + brewery_address + '</div>';
+	popup_html += '<div>' + brewery_city + '</div>'
+
+	// Bind the popup to the marker using Leaflet
+	marker.bindPopup(popup_html);
 }

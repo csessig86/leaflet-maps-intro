@@ -166,5 +166,32 @@ This is [map we will be building](http://csessig86.github.io/leaflet-maps-intro/
 
 * The setColor function looks at the population and it assigns it a color. The higher the population, the darker the green. The colors were grabbed from [ColorBrewer](http://colorbrewer2.org/).
 
-
 * #####Now refresh the map one more time. You have created a beautiful choropleth map with markers on top of it. Congrats!
+
+####Bonus: Add a popups to the markers
+
+* If we want to add popups to the markers on the map, we need to change our for loop to look like so:
+	```javascript
+	for (var num = 0; num < breweries.length; num++) {
+		var brewery = breweries[num];
+		var brewery_lat = brewery["latitude"];
+		var brewery_long = brewery["longitude"];
+		var brewery_name = brewery["brewery"];
+		var brewery_address = brewery["address"];
+		var brewery_city = brewery["city"];
+
+		var marker = L.marker([brewery_lat, brewery_long]).addTo(map);
+		
+		var popup_html = '<h3>' + brewery_name + '</h3>';
+		popup_html += '<div>' + brewery_address + '</div>';
+		popup_html += '<div>' + brewery_city + '</div>'
+
+		marker.bindPopup(popup_html);
+	}
+	```
+
+* The first thing this does is find more information about each brewery we are looping through. It's now grabbing the breweries name, address and city, which we will use in the popup.
+
+* This creates the HTML for the popup using the properties we've grabbed.
+
+* Finally, it binds the HTML to the marker variable using Leaflet's handy [bindPopup method](http://leafletjs.com/reference.html#marker-bindpopup). 

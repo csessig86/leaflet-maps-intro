@@ -168,7 +168,7 @@ This is [map we will be building](http://csessig86.github.io/leaflet-maps-intro/
 
 * Now refresh the map one more time. You have created a beautiful choropleth map with markers on top of it. Congrats!
 
-####Bonus: Add a popups to the markers
+####Bonus: Adding popups to the markers
 
 * If we want to add popups to the markers on the map, we need to change our for loop to look like so:
 	```javascript
@@ -190,8 +190,8 @@ This is [map we will be building](http://csessig86.github.io/leaflet-maps-intro/
 	}
 	```
 
-* The first thing this does is find more information about each brewery we are looping through. It's now grabbing the breweries name, address and city, which we will use in the popup.
+* The first thing this does is find more information about each brewery we are looping through. In addition to its latitude and longitude information, the loop is now grabbing the brewery's name, address and city, which we will use in the popup.
 
-* This creates the HTML for the popup using the properties we've grabbed.
+* It then creates the HTML for the popup using the properties we've grabbed.
 
-* Finally, it binds the HTML to the marker variable using Leaflet's handy [bindPopup method](http://leafletjs.com/reference.html#marker-bindpopup). 
+* Finally, it binds the HTML to the marker variable using Leaflet's handy [bindPopup method](http://leafletjs.com/reference.html#marker-bindpopup). This makes it so the popup will show up when you click on the marker.

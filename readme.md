@@ -1,8 +1,8 @@
 #Building your first Leaflet.js map
 This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](https://github.com/Leaflet/Leaflet).
 
-This is what we will be building:
-##[LIVE DEMO](http://csessig86.github.io/leaflet-maps-intro/)
+This is [map we will be building](http://csessig86.github.io/leaflet-maps-intro/).
+===========
 
 ####1. Why Leaflet.js?
 * Free, open source and actively maintained

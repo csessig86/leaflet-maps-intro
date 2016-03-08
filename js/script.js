@@ -63,5 +63,5 @@ for (var num = 0; num < breweries.length; num++) {
 	// Use Leaflet to add a marker for each brewery
 	// And give it the lat, long information
 	// In the current brewery's object
-	var brewery_marker = L.marker([brewery_lat, brewery_long]).addTo(map);
+	L.marker([brewery_lat, brewery_long]).addTo(map);
 }

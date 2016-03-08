@@ -2,7 +2,7 @@ var breweries = [{"brewery":"515 Brewing Company","address":"7700 University Ave
 {"brewery":"Angry Cedar Brewing Company","address":"730 Technology Place\n","city":"Waverly, IA, 50677","phone":"NA","website":"www.angrycedar.com","latitude":42.726667,"longitude":-92.475278},
 {"brewery":"Appanoose Rapids Brewing Company","address":"332 East Main Street","city":"Ottumwa, IA, 52501","phone":"(641) 684-4008","website":"www.appanooserapidsbrewingcompany.com","latitude":41.015936,"longitude":-92.410008},
 {"brewery":"Backpocket Brewing Company","address":"903 Quarry Road","city":"Coralville, IA 52241","phone":"(319) 466-4444","website":"www.backpocketbrewing.com","latitude":41.681596,"longitude":-91.559932},
-{"brewery":"Beckâ€™s Sports Brewery","address":"3295 University Ave","city":"Waterloo, IA 50701","phone":"(319) 234-4333","website":"www.barmuda.com/becks","latitude":42.500706,"longitude":-92.38998},
+{"brewery":"Beck's Sports Brewery","address":"3295 University Ave","city":"Waterloo, IA 50701","phone":"(319) 234-4333","website":"www.barmuda.com/becks","latitude":42.500706,"longitude":-92.38998},
 {"brewery":"Boone Valley Brewing Company\n","address":"816 7th Street","city":"Boone, Iowa 50036","phone":"(515) 432-1232","website":"NA","latitude":42.062616,"longitude":-93.880685},
 {"brewery":"Briar Creek Brewery","address":"NA","city":"Janesville, IA 50647","phone":"NA","website":"www.briarcreekbrewery.com","latitude":42.627377,"longitude":-92.46536},
 {"brewery":"C.I.B. (Chefs in Black) Brewery","address":"39036 Aspen Road","city":"Macedonia, IA 51549","phone":"(515) 450-2981","website":"www.cibbrewery.com","latitude":41.175571,"longitude":-95.441562},

@@ -67,7 +67,7 @@ This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](h
 		var brewery_lat = brewery["latitude"];
 		var brewery_long = brewery["longitude"];
 
-		var brewery_marker = L.marker([brewery_lat, brewery_long]).addTo(map);
+		L.marker([brewery_lat, brewery_long]).addTo(map);
 	}
 	```
 * This loops through each brewery, grabs the brewery's latitude and longitude information and puts it on the map. The [L.marker function](http://leafletjs.com/reference.html#marker) is a Leaflet function that is used to create a new marker for each brewery we are looping through. It's placed on the map based on the brewery's latitude and longitude information.

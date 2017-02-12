@@ -1,5 +1,5 @@
 #Building your first Leaflet.js map
-This is the code behind my NICAR 2016 session on making maps with [Leaflet.js](https://github.com/Leaflet/Leaflet).
+This is the code behind my NICAR 2017 session on making maps with [Leaflet.js](https://github.com/Leaflet/Leaflet).
 
 This is [map we will be building](http://csessig86.github.io/leaflet-maps-intro/).
 

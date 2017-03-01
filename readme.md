@@ -48,7 +48,7 @@ This is [map we will be building](http://csessig86.github.io/leaflet-maps-intro/
 	}
 
 	```
-* This gets us a map without any data points that looks like so:
+* This gets us a map without any data points that looks like:
 ![alt tag](https://raw.githubusercontent.com/csessig86/leaflet-maps-intro/master/imgs/01.png)
 
 ####5. Add data to map

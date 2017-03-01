@@ -96,7 +96,7 @@ This is [map we will be building](http://csessig86.github.io/leaflet-maps-intro/
 * You'll what to place this ABOVE the for loop that places the marker on the map. The makes sure the counties appear under the markers.
 
 * Refresh your map and you'll see the counties now on the map:
-![alt tag](https://raw.githubusercontent.com/csessig86/leaflet-maps-intro/master/imgs/03.png)
+![alt tag](https://raw.githubusercontent.com/csessig86/leaflet-maps-intro/master/imgs/03.png?ver=2)
 
 ####7. Styling the counties
 * The counties kind of look ugly right now. We can fix that by extending the geojson object we added:
@@ -122,7 +122,7 @@ This is [map we will be building](http://csessig86.github.io/leaflet-maps-intro/
 * For more information on the different styling options available for GeoJSON layers, visit [this page](http://mourner.github.io/Leaflet/reference.html#path-options).
 
 * Your map should now look like:
-![alt tag](https://raw.githubusercontent.com/csessig86/leaflet-maps-intro/master/imgs/04.png)
+![alt tag](https://raw.githubusercontent.com/csessig86/leaflet-maps-intro/master/imgs/04.png?ver=2)
 
 ####8. Color counties based on population data
 * Our map is cool and all but the counties don't tell us much. Wouldn't it be neat if we could shade the counties based on how many people lived within them? Fortunately we can do that relatively easily in Leaflet.
@@ -175,7 +175,7 @@ This is [map we will be building](http://csessig86.github.io/leaflet-maps-intro/
 * The setColor function looks at the population and it assigns it a color. The higher the population, the darker the green. The colors were grabbed from [ColorBrewer](http://colorbrewer2.org/).
 
 * Now refresh the map one more time. You have created a beautiful choropleth map with markers on top of it. Congrats!
-![alt tag](https://raw.githubusercontent.com/csessig86/leaflet-maps-intro/master/imgs/05.png)
+![alt tag](https://raw.githubusercontent.com/csessig86/leaflet-maps-intro/master/imgs/05.png?ver=2)
 
 ####Bonus: Adding popups to the markers
 

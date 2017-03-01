@@ -31,6 +31,7 @@ This is [map we will be building](http://csessig86.github.io/leaflet-maps-intro/
 * These link to the data sources we're going to be using: [JSON data](http://www.copterlabs.com/json-what-it-is-how-it-works-how-to-use-it/) of breweries in Iowa and [GeoJSON data](http://geojson.org/) of the counties in Iowa.
 
 ####3. Base map
+![alt tag](https://raw.githubusercontent.com/csessig86/leaflet-maps-intro/master/imgs/01.png)
 * Add this to js/script.js:
 	```javascript
 	var layer = new L.StamenTileLayer('toner-background');

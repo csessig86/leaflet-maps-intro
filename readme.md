@@ -31,7 +31,6 @@ This is [map we will be building](http://csessig86.github.io/leaflet-maps-intro/
 * These link to the data sources we're going to be using: [JSON data](http://www.copterlabs.com/json-what-it-is-how-it-works-how-to-use-it/) of breweries in Iowa and [GeoJSON data](http://geojson.org/) of the counties in Iowa.
 
 ####3. Base map
-![alt tag](https://raw.githubusercontent.com/csessig86/leaflet-maps-intro/master/imgs/01.png)
 * Add this to js/script.js:
 	```javascript
 	var layer = new L.StamenTileLayer('toner-background');
@@ -49,7 +48,8 @@ This is [map we will be building](http://csessig86.github.io/leaflet-maps-intro/
 	}
 
 	```
-* This gets us a map without any data points.
+* This gets us a map without any data points that looks like so:
+![alt tag](https://raw.githubusercontent.com/csessig86/leaflet-maps-intro/master/imgs/01.png)
 
 ####5. Add data to map
 * Our sample dataset is [a list of breweries in Iowa](https://docs.google.com/spreadsheets/d/1M6mREJiDMQ1NTbdbOXiw0sWN_6DE7E33JJY503GS7tc/pub?output=html). I've already included lat, long information for each brewery and converted the CSV into a JSON file. You must have lat, long information for each location for Leaflet to put them on the map.
@@ -74,6 +74,9 @@ This is [map we will be building](http://csessig86.github.io/leaflet-maps-intro/
 	}
 	```
 * This loops through each brewery, grabs the brewery's latitude and longitude information and puts it on the map. The [L.marker function](http://leafletjs.com/reference.html#marker) is a Leaflet function that is used to create a new marker for each brewery we are looping through. It's placed on the map based on the brewery's latitude and longitude information.
+
+Your map should now look like so:
+![alt tag](https://raw.githubusercontent.com/csessig86/leaflet-maps-intro/master/imgs/02.png)
 
 ####6. Add GeoJSON data
 * The second dataset we will be working is a list of counties in Iowa, which is available in GeoJSON format [here](http://catalog.opendata.city/dataset/iowa-counties-polygon/resource/52b6d8b4-b203-4ab3-94db-e5e93c335a14). I've downloaded this already and included it within the data directory.

@@ -75,7 +75,7 @@ This is [map we will be building](http://csessig86.github.io/leaflet-maps-intro/
 	```
 * This loops through each brewery, grabs the brewery's latitude and longitude information and puts it on the map. The [L.marker function](http://leafletjs.com/reference.html#marker) is a Leaflet function that is used to create a new marker for each brewery we are looping through. It's placed on the map based on the brewery's latitude and longitude information.
 
-Your map should now look like so:
+Your map should now look like:
 ![alt tag](https://raw.githubusercontent.com/csessig86/leaflet-maps-intro/master/imgs/02.png)
 
 ####6. Add GeoJSON data
@@ -95,7 +95,8 @@ Your map should now look like so:
 
 * You'll what to place this ABOVE the for loop that places the marker on the map. The makes sure the counties appear under the markers.
 
-* Refresh your map and you'll see the counties now on the map.
+* Refresh your map and you'll see the counties now on the map:
+![alt tag](https://raw.githubusercontent.com/csessig86/leaflet-maps-intro/master/imgs/03.png)
 
 ####7. Styling the counties
 * The counties kind of look ugly right now. We can fix that by extending the geojson object we added:
@@ -120,7 +121,10 @@ Your map should now look like so:
 
 * For more information on the different styling options available for GeoJSON layers, visit [this page](http://mourner.github.io/Leaflet/reference.html#path-options).
 
-####8¡f. Color counties based on population data
+Your map should now look like:
+![alt tag](https://raw.githubusercontent.com/csessig86/leaflet-maps-intro/master/imgs/04.png)
+
+####8. Color counties based on population data
 * Our map is cool and all but the counties don't tell us much. Wouldn't it be neat if we could shade the counties based on how many people lived within them? Fortunately we can do that relatively easily in Leaflet.
 
 * The final piece of data we will be working with is population data from the [U.S. Census](http://www.census.gov/). We will create a basic [choropleth map](http://leafletjs.com/examples/choropleth.html) where the counties will be shaded based on their population. The more people, the darker the county.
@@ -174,7 +178,7 @@ Your map should now look like so:
 
 ####Bonus: Adding popups to the markers
 
-* If we want to add popups to the markers on the map, we need to change our for loop to look like so:
+* If we want to add popups to the markers on the map, we need to change our for loop to look like:
 	```javascript
 	for (var num = 0; num < breweries.length; num++) {
 		var brewery = breweries[num];

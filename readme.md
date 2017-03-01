@@ -175,6 +175,7 @@ Your map should now look like:
 * The setColor function looks at the population and it assigns it a color. The higher the population, the darker the green. The colors were grabbed from [ColorBrewer](http://colorbrewer2.org/).
 
 * Now refresh the map one more time. You have created a beautiful choropleth map with markers on top of it. Congrats!
+![alt tag](https://raw.githubusercontent.com/csessig86/leaflet-maps-intro/master/imgs/05.png)
 
 ####Bonus: Adding popups to the markers
 
@@ -203,3 +204,4 @@ Your map should now look like:
 * It then creates the HTML for the popup using the properties we've grabbed.
 
 * Finally, it binds the HTML to the marker variable using Leaflet's handy [bindPopup method](http://leafletjs.com/reference.html#marker-bindpopup). This makes it so the popup will show up when you click on the marker.
+![alt tag](https://raw.githubusercontent.com/csessig86/leaflet-maps-intro/master/imgs/06.png)

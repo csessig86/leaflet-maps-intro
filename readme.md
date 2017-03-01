@@ -116,7 +116,7 @@ This is [map we will be building](http://csessig86.github.io/leaflet-maps-intro/
 
 * For more information on the different styling options available for GeoJSON layers, visit [this page](http://mourner.github.io/Leaflet/reference.html#path-options).
 
-####7. Color counties based on population data
+####8¡f. Color counties based on population data
 * Our map is cool and all but the counties don't tell us much. Wouldn't it be neat if we could shade the counties based on how many people lived within them? Fortunately we can do that relatively easily in Leaflet.
 
 * The final piece of data we will be working with is population data from the [U.S. Census](http://www.census.gov/). We will create a basic [choropleth map](http://leafletjs.com/examples/choropleth.html) where the counties will be shaded based on their population. The more people, the darker the county.

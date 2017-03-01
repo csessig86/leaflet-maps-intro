@@ -1,4 +1,4 @@
-[{"brewery":"515 Brewing Company","address":"7700 University Ave.","city":"Clive, IA 50325","phone":"(515) 661-4615","website":"www.515brewing.com","latitude":41.600002,"longitude":-93.722766},
+var breweries = [{"brewery":"515 Brewing Company","address":"7700 University Ave.","city":"Clive, IA 50325","phone":"(515) 661-4615","website":"www.515brewing.com","latitude":41.600002,"longitude":-93.722766},
 {"brewery":"Angry Cedar Brewing Company","address":"730 Technology Place\n","city":"Waverly, IA, 50677","phone":"NA","website":"www.angrycedar.com","latitude":42.726667,"longitude":-92.475278},
 {"brewery":"Appanoose Rapids Brewing Company","address":"332 East Main Street","city":"Ottumwa, IA, 52501","phone":"(641) 684-4008","website":"www.appanooserapidsbrewingcompany.com","latitude":41.015936,"longitude":-92.410008},
 {"brewery":"Backpocket Brewing Company","address":"903 Quarry Road","city":"Coralville, IA 52241","phone":"(319) 466-4444","website":"www.backpocketbrewing.com","latitude":41.681596,"longitude":-91.559932},

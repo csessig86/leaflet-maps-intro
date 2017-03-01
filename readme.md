@@ -75,7 +75,7 @@ This is [map we will be building](http://csessig86.github.io/leaflet-maps-intro/
 	```
 * This loops through each brewery, grabs the brewery's latitude and longitude information and puts it on the map. The [L.marker function](http://leafletjs.com/reference.html#marker) is a Leaflet function that is used to create a new marker for each brewery we are looping through. It's placed on the map based on the brewery's latitude and longitude information.
 
-Your map should now look like:
+* Your map should now look like:
 ![alt tag](https://raw.githubusercontent.com/csessig86/leaflet-maps-intro/master/imgs/02.png)
 
 ####6. Add GeoJSON data
@@ -121,7 +121,7 @@ Your map should now look like:
 
 * For more information on the different styling options available for GeoJSON layers, visit [this page](http://mourner.github.io/Leaflet/reference.html#path-options).
 
-Your map should now look like:
+* Your map should now look like:
 ![alt tag](https://raw.githubusercontent.com/csessig86/leaflet-maps-intro/master/imgs/04.png)
 
 ####8. Color counties based on population data

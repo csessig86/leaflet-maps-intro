@@ -3,7 +3,7 @@ This is the code behind my NICAR 2017 session on making maps with [Leaflet.js](h
 
 This is [map we will be building](http://csessig86.github.io/leaflet-maps-intro/).
 
-####1. Why Leaflet.js?
+####Pre: Why Leaflet.js?
 * Free, open source and actively maintained
 * Well documented with great examples
 * Has a huge community behind it
@@ -13,12 +13,12 @@ This is [map we will be building](http://csessig86.github.io/leaflet-maps-intro/
 * Can handle thousands of data points without loading too slowly
 * [Plugins](http://leafletjs.com/plugins.html)! Example of the [markercluster plugin](http://csessig86.github.io/tabletop_to_leaflet/#cluster)
 
-####2. The set up
+####Pre: The set up
 * This repo has two directories:
 	* 01-base contains the base files you will need to get started. All the files you need have been created here, but none of the mapping code has been written yet.
 	* 02-final is the final project we are going to build.
 
-####2. Getting started
+####1. Getting started
 * Download this repo onto your computer. Then open up the 01-base directory you created in a text editor. We'll be adding our mapping code to the files in this directory.
 
 * You'll notice at the bottom of the index.html file these lines:
@@ -30,7 +30,7 @@ This is [map we will be building](http://csessig86.github.io/leaflet-maps-intro/
 
 * These link to the data sources we're going to be using: [JSON data](http://www.copterlabs.com/json-what-it-is-how-it-works-how-to-use-it/) of breweries in Iowa and [GeoJSON data](http://geojson.org/) of the counties in Iowa.
 
-####3. Base map
+####2. Base map
 * Add this to js/script.js:
 	```javascript
 	var layer = new L.StamenTileLayer('toner-background');
@@ -39,7 +39,7 @@ This is [map we will be building](http://csessig86.github.io/leaflet-maps-intro/
 	map.addLayer(layer);
 	```
 
-####4. CSS
+####3. CSS
 * Add this to css/style.css:
 	```css
 	#map {
@@ -78,7 +78,7 @@ This is [map we will be building](http://csessig86.github.io/leaflet-maps-intro/
 * Your map should now look like:
 ![alt tag](https://raw.githubusercontent.com/csessig86/leaflet-maps-intro/master/imgs/02.png)
 
-####6. Add GeoJSON data
+####4. Add GeoJSON data
 * The second dataset we will be working is a list of counties in Iowa, which is available in GeoJSON format [here](http://catalog.opendata.city/dataset/iowa-counties-polygon/resource/52b6d8b4-b203-4ab3-94db-e5e93c335a14). I've downloaded this already and included it within the data directory.
 
 * NOTE: The counties also have population data in them, which we use later.
@@ -98,7 +98,7 @@ This is [map we will be building](http://csessig86.github.io/leaflet-maps-intro/
 * Refresh your map and you'll see the counties now on the map:
 ![alt tag](https://raw.githubusercontent.com/csessig86/leaflet-maps-intro/master/imgs/03.png?ver=2)
 
-####7. Styling the counties
+####5. Styling the counties
 * The counties kind of look ugly right now. We can fix that by extending the geojson object we added:
 
 	```javascript
@@ -124,7 +124,7 @@ This is [map we will be building](http://csessig86.github.io/leaflet-maps-intro/
 * Your map should now look like:
 ![alt tag](https://raw.githubusercontent.com/csessig86/leaflet-maps-intro/master/imgs/04.png?ver=2)
 
-####8. Color counties based on population data
+####6. Color counties based on population data
 * Our map is cool and all but the counties don't tell us much. Wouldn't it be neat if we could shade the counties based on how many people lived within them? Fortunately we can do that relatively easily in Leaflet.
 
 * The final piece of data we will be working with is population data from the [U.S. Census](http://www.census.gov/). We will create a basic [choropleth map](http://leafletjs.com/examples/choropleth.html) where the counties will be shaded based on their population. The more people, the darker the county.
